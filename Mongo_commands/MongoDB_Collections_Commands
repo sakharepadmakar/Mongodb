@@ -1,0 +1,72 @@
+#Create collection
+db.createCollection("collectionName")
+
+#Drop collection 
+db.COLLECTION_NAME.drop()
+
+
+#Insert a single Document in a Collection
+db.collection_name.insert()
+Example:
+   db.collectionName.insert(  
+   {  
+     name: "Chaitanya",  
+     age: 30,
+     email: "admin@beginnersbook.com",
+     course: [ { name: "MongoDB", duration: 7 }, { name: "Java", duration: 30 } ]
+   }  
+)
+###Note: The insert() method creates the collection if it doesn’t exist but if the collection is present then it inserts the document into it
+
+#Verification of collection
+db.collectionName.find()
+
+#Insert Multiple documents:
+var beginners =
+ [
+    {
+	"StudentId" : 1001,
+	"StudentName" : "Steve",
+        "age": 30
+    },
+    {
+	"StudentId" : 1002,
+	"StudentName" : "Negan",
+        "age": 42
+    },
+    {
+	"StudentId" : 3333,
+	"StudentName" : "Rick",
+        "age": 35
+    },
+];
+db.collectionName.insert(beginners);
+#Verification of collection
+db.collectionName.find()
+
+## Print in Json format
+db.students.find().forEach(printjson)
+
+##Print only 1st 10 result
+db.collectionName.find().limit(10)
+
+#Retrieve Record by ID
+db.collectionName.find({"_id": ObjectId("some_id")})
+
+# total document count of collection
+db.collectionName.count()
+
+#check the latency
+db.collection.latencyStats()
+
+#Size of collection
+db.collection.dataSize()
+
+#Total size of document stored in colletion:
+db.collection.storageSize()
+
+#Total size in bytes for collection data and index
+db.collection.totalSize()
+
+#Rename collection
+db.fromCollection.renameCollection(toCollection)

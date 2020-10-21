@@ -1,0 +1,2 @@
+#Mongo query string FOR PYTHON
+mongodb://${USERNAME}:${PASSWORD}@${MASTER_IP}:27017,${SECONDARY_IP}:27017,${SECONDARY_IP}:27017/?replicaSet=${REPLICA_SET}

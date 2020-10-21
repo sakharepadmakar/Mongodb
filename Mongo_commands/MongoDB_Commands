@@ -1,0 +1,53 @@
+#Log Into MongoDB
+mongo -u <username> -p <password> --authenticationDatabase <dbname>
+
+# show all databases
+show dbs
+
+#Select Database to Work With
+use database_name
+
+#create new db
+use database_name
+
+#Know your current selected database
+db
+
+#Drop database
+db.dropDatabase()
+
+#Create collection
+db.createCollection(name)
+
+#Drop collection 
+db.COLLECTION_NAME.drop()
+
+
+#Authenticate and Log Out From Database
+#When switching to a different database using the use dbName command, the user is required to authenticate using a valid database user for that database.
+db.auth("username", "password") #Authentication 
+db.logout()  #Logout
+
+#List Down Collections of current db
+show collections; 
+#OR
+db.getCollectionNames()
+
+#List Down all Users of current db
+show users;
+db.getUsers();
+
+#List Down all Roles:
+show roles
+
+#Lists the last 5 recent operations that took 1 millisecond or more.
+show profile
+
+#Clone current db
+db.cloneDatabase()	
+
+#Rename collection
+db.fromCollection.renameCollection(toCollection)
+
+#MongoDB dump
+mongodump -h host -u "user" -p "password" --authenticationDatabase "admin" --db "dbname" --gzip --archive=./dbaname.gz
